@@ -38,9 +38,13 @@ const showTemplate = (hash) => {
 }
 
 export const initRouter = () => {
+  // cuando la ventana se carga saca el hash y se lo pasa a changeRoute
   window.addEventListener('load', changeRoute(window.location.hash));
 
+  // si encuentra un cambio en el hash lo vuelve a sacar y pasar como parámetro a changeRoute
   if ('onhashchange' in window) {
-    changeRoute(window.location.hash);
+    window.onhashchange = () => {
+      changeRoute(window.location.hash);
+    }
   }
 }
