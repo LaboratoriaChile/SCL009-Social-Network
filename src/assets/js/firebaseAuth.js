@@ -1,3 +1,5 @@
+import { firebaseInit } from "./firebaseInit";
+
 // Export logutMessage function
 export const logoutMessage = (status) => {
   // Check if there's a status
